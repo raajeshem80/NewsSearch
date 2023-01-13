@@ -7,7 +7,7 @@
 * Tomcat embedded;
 * Spring Boot;
 * JUnit;
-* Mockito;
+* Lombock;
 
 ### Swagger UI end point
 
