@@ -3,7 +3,7 @@
  */
 package com.sapient.newssearch.service;
 
-import java.util.List;
+import com.sapient.newssearch.dto.NewsData;
 
 //import com.sapient.newssearch.model.News;
 
@@ -16,4 +16,6 @@ import java.util.List;
 public interface NewsApiService {
 
 	//List<News> fuzzySearch(String searchTerm);
+	
+	NewsData getNewsArticles(String q, String publishedFrom, int interval, String xApiKey, String sortBy);
 }

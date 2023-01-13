@@ -40,10 +40,10 @@ logging:
     org.springframework: INFO
     com.sapient.newssearch: INFO
 
-jwt:
-  secretKey: secret
-  issuer: rajesh
-  expirationMinute: 10
+secret:
+  admin.api.key: ccaf5d41cc5140c984818c344edcc14d
+newsapi:
+  endpoint: https://newsapi.org/v2/everything
 
 swagger:
   contact-name: Rajesh Engimoori

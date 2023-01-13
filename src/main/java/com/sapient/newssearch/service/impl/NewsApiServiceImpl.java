@@ -7,10 +7,14 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
+import com.sapient.newssearch.dto.NewsData;
 //import com.sapient.newssearch.repository.NewsRepository;
 import com.sapient.newssearch.service.NewsApiService;
+import com.sapient.newssearch.utils.NewsApiUtility;
 
 /**
  * Rajesh Engimoori
@@ -21,10 +25,41 @@ import com.sapient.newssearch.service.NewsApiService;
 @Service
 public class NewsApiServiceImpl implements NewsApiService {
 
-	@Autowired
+	//@Autowired
 	//private NewsRepository newsRepository;
 	
-	private static final List<String> SEARCHABLE_FIELDS = Arrays.asList("headline", "author", "title", "description");
+	@Autowired
+	RestTemplate restTemplate;
+	
+	@Value("${newsapi.endpoint}")
+	private String newsapiEndpoint;
+	
+	private static final List<String> SEARCHABLE_FIELDS = Arrays.asList("title", "description", "content");
+
+	@Override
+	public NewsData getNewsArticles(String q, String publishedFrom, int interval,
+			String xApiKey, String sortBy) {
+
+		StringBuffer sb = new StringBuffer();
+		sb.append(newsapiEndpoint);
+		sb.append("?q="+q);
+		if(publishedFrom != null && !publishedFrom.equals("")) {
+			String publishedTo = NewsApiUtility.FormatDateTime(publishedFrom, interval);
+			sb.append("&from=" + publishedFrom);
+			sb.append("&to=" + publishedTo);
+		}
+		
+		if(sortBy != null && !sortBy.equals("")) {
+			sb.append("&sortBy="+sortBy);
+		} else {
+			sb.append("&sortBy="+sortBy);
+		}
+		sb.append("&apiKey="+xApiKey);
+
+		
+		NewsData newsData = restTemplate.getForObject(sb.toString(), NewsData.class);
+		return newsData;
+	}
 	
 
 //	public List<News> fuzzySearch(String searchTerm) {
