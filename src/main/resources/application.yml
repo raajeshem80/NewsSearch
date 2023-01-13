@@ -1,0 +1,56 @@
+spring:
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/news-search
+#    username: postgres
+#    password: 
+#
+#  jpa:
+#    database-platform: org.hibernate.dialect.PostgreSQLDialect
+#    hibernate:
+#      ddl-auto: update
+#      show-sql: true
+#      format-sql: true
+#      type: info
+#      use-sql-comments: true
+#      properties:
+#        hibernate.use_sql_comments: true
+#        hibernate.format_sql: true
+#    properties:
+#        hibernate:
+#            search:
+#                backend:
+#                    type: lucene
+#                    directory.root: ./data/index
+springdoc:
+  show-actuator: true
+  paths-to-match: /**
+  packages-to-scan: com.sapient.newssearch
+
+management:
+  endpoint:
+    health:
+      show-details: ALWAYS
+    endpoints:
+      web:
+        exposure:
+          include: "*"
+
+logging:
+  level:
+    org.springframework: INFO
+    com.sapient.newssearch: INFO
+
+jwt:
+  secretKey: secret
+  issuer: rajesh
+  expirationMinute: 10
+
+swagger:
+  contact-name: Rajesh Engimoori
+  contact-mail: omer@farukgenc.com
+  contact-url: https://farukgenc.com
+  app-name: Spring Boot Boilerplate Project
+  app-description: "Spring Boot Boilerplate is a starter kit. This project includes : Spring Boot(2.7.4), Spring Data JPA, Spring Validation, Spring Security + JWT Token, PostgreSQL, Mapstruct, Lombok, Swagger"
+  app-version: 2.0.0
+  app-license-url: https://www.apache.org/licenses/LICENSE-2.0.html
+  app-license: Apache 2.0
