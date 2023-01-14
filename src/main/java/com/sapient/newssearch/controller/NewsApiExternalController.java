@@ -64,7 +64,7 @@ public class NewsApiExternalController {
 			@RequestParam(value = "publishDT", required = false) String publishedAt,
 			@RequestParam(value = "interval", required = false, defaultValue = "12") int interval,
 			@RequestHeader(value = "X-Api-Key") String apiKey, 
-			@RequestHeader(value = "sortBy", required = false) String sortBy,
+			@RequestParam(value = "sortBy", required = false) String sortBy,
 			HttpServletRequest httpRequest) throws UnsupportedEncodingException {
 
 		Map<String, String> queryMap =  NewsApiUtility.GetQueryParameters(httpRequest);

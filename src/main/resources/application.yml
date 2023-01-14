@@ -47,10 +47,10 @@ newsapi:
 
 swagger:
   contact-name: Rajesh Engimoori
-  contact-mail: omer@farukgenc.com
-  contact-url: https://farukgenc.com
-  app-name: Spring Boot Boilerplate Project
-  app-description: "Spring Boot Boilerplate is a starter kit. This project includes : Spring Boot(2.7.4), Spring Data JPA, Spring Validation, Spring Security + JWT Token, PostgreSQL, Mapstruct, Lombok, Swagger"
+  contact-mail: rajesh.em@gmail.com
+  contact-url: https://www.linkedin.com/in/rajeshengimoori/
+  app-name: News Group API
+  app-description: "Search through millions of articles from over 80,000 large and small news sources and blogs. This project includes : Spring Boot(2.7.4), Spring Data JPA, Spring Validation, Spring Security + JWT Token, PostgreSQL, Mapstruct, Lombok, Swagger"
   app-version: 2.0.0
   app-license-url: https://www.apache.org/licenses/LICENSE-2.0.html
   app-license: Apache 2.0

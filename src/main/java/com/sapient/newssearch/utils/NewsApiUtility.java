@@ -29,7 +29,9 @@ public class NewsApiUtility {
 	public static String FormatDateTime(String dateValue, int interval) {
 
 		DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ISO_DATE_TIME;
+		System.out.println(">>>>>>>>>>> Before");
 		LocalDateTime date = LocalDateTime.parse(dateValue, DATE_TIME_FORMATTER);
+		System.out.println(">>>>>>>>>>> After");
 		LocalDateTime toDate = date.plusHours(interval);
 		ZonedDateTime atZone = toDate.atZone(ZoneOffset.UTC);
 		return DateTimeFormatter.ISO_DATE_TIME.format(atZone);

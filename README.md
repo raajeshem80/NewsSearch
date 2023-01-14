@@ -10,7 +10,7 @@
 * Lombock;
 ## Build
 
-Build the application as a [Docker](https://www.docker.com/) image using:
+Build the application:
 
 ```bash
 mvn clean package
@@ -22,6 +22,9 @@ Run the included docker-compose file with:
 
 ```bash
 docker-compose up
+```
+
+## Swagger
 
 ### Swagger UI end point
 
@@ -34,3 +37,4 @@ Run the included docker-compose file with:
 
 ```bash
 docker-compose down
+```

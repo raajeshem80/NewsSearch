@@ -16,12 +16,15 @@ import com.sapient.newssearch.dto.NewsData;
 import com.sapient.newssearch.service.NewsApiService;
 import com.sapient.newssearch.utils.NewsApiUtility;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Rajesh Engimoori
  * Created on Jan 12, 2023
  * Email: rajesh.em@gmail.com
  **/
 
+@Slf4j
 @Service
 public class NewsApiServiceImpl implements NewsApiService {
 
@@ -44,6 +47,7 @@ public class NewsApiServiceImpl implements NewsApiService {
 		sb.append(newsapiEndpoint);
 		sb.append("?q="+q);
 		if(publishedFrom != null && !publishedFrom.equals("")) {
+			log.info(">>>>>>>>>>>>>>>> "+publishedFrom);
 			String publishedTo = NewsApiUtility.FormatDateTime(publishedFrom, interval);
 			sb.append("&from=" + publishedFrom);
 			sb.append("&to=" + publishedTo);
@@ -56,7 +60,7 @@ public class NewsApiServiceImpl implements NewsApiService {
 		}
 		sb.append("&apiKey="+xApiKey);
 
-		
+		log.info(">>>>>>>>>>>>>>>> "+sb.toString());
 		NewsData newsData = restTemplate.getForObject(sb.toString(), NewsData.class);
 		return newsData;
 	}
