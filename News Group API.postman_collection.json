@@ -1,0 +1,920 @@
+{
+	"info": {
+		"_postman_id": "dfb0929c-a477-4576-8b1b-d839dc159fd8",
+		"name": "News Group API",
+		"description": "Search through millions of articles from over 80,000 large and small news sources and blogs. This project includes : Spring Boot(2.7.4), Spring Data JPA, Spring Validation, Spring Security + JWT Token, PostgreSQL, Mapstruct, Lombok, Swagger\n\nContact Support:\n Name: Rajesh Engimoori\n Email: rajesh.em@gmail.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1713087"
+	},
+	"item": [
+		{
+			"name": "API to fetch News Info.",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"description": "(Required) ",
+						"key": "X-Api-Key",
+						"value": "ccaf5d41cc5140c984818c344edcc14d"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/1.0/getNewsInfo?q=apple&publishDT=2023-01-13T10:32:40&interval=12&sortBy=popularity",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"1.0",
+						"getNewsInfo"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "apple",
+							"description": "(Required) "
+						},
+						{
+							"key": "publishDT",
+							"value": "2023-01-13T10:32:40"
+						},
+						{
+							"key": "interval",
+							"value": "12"
+						},
+						{
+							"key": "sortBy",
+							"value": "popularity"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Successful operation",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							},
+							{
+								"description": "(Required) ",
+								"key": "X-Api-Key",
+								"value": "proident"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/1.0/getNewsInfo?q=proident&publishDT=proident&interval=12&sortBy=proident",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"getNewsInfo"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "proident"
+								},
+								{
+									"key": "publishDT",
+									"value": "proident"
+								},
+								{
+									"key": "interval",
+									"value": "12"
+								},
+								{
+									"key": "sortBy",
+									"value": "proident"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": "[\n  {\n    \"status\": \"Excepteur dolor Duis laborum\",\n    \"totalResults\": -53405122,\n    \"articles\": [\n      {\n        \"source\": {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"author\": \"amet\",\n        \"title\": \"non labore\",\n        \"description\": \"aute\",\n        \"url\": \"qui ea quis tempor\",\n        \"urlToImage\": \"enim aliqua et\",\n        \"publishedAt\": \"1961-06-07T19:46:32.011Z\",\n        \"content\": \"sint d\"\n      },\n      {\n        \"source\": {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"author\": \"ad comm\",\n        \"title\": \"in eu\",\n        \"description\": \"id sed\",\n        \"url\": \"non voluptate ea elit\",\n        \"urlToImage\": \"Duis nisi dolor ut\",\n        \"publishedAt\": \"1989-07-01T21:24:27.175Z\",\n        \"content\": \"adipisicing culpa\"\n      }\n    ]\n  },\n  {\n    \"status\": \"Lorem\",\n    \"totalResults\": -49888492,\n    \"articles\": [\n      {\n        \"source\": {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"author\": \"aute eu\",\n        \"title\": \"Ut aute non Excepteur\",\n        \"description\": \"nulla ex Duis commodo amet\",\n        \"url\": \"consectetur dolore dolor sit minim\",\n        \"urlToImage\": \"ullamco Duis\",\n        \"publishedAt\": \"2000-03-02T14:24:57.199Z\",\n        \"content\": \"culpa anim\"\n      },\n      {\n        \"source\": {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"author\": \"aliquip cillum laboris\",\n        \"title\": \"anim qui\",\n        \"description\": \"exercitation\",\n        \"url\": \"irure officia\",\n        \"urlToImage\": \"do ex consectetur\",\n        \"publishedAt\": \"1975-12-10T16:13:19.119Z\",\n        \"content\": \"ut ullamco occ\"\n      }\n    ]\n  }\n]"
+				},
+				{
+					"name": "Invalid Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							},
+							{
+								"description": "(Required) ",
+								"key": "X-Api-Key",
+								"value": "proident"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/1.0/getNewsInfo?q=proident&publishDT=proident&interval=12&sortBy=proident",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"getNewsInfo"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "proident"
+								},
+								{
+									"key": "publishDT",
+									"value": "proident"
+								},
+								{
+									"key": "interval",
+									"value": "12"
+								},
+								{
+									"key": "sortBy",
+									"value": "proident"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "No data found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							},
+							{
+								"description": "(Required) ",
+								"key": "X-Api-Key",
+								"value": "proident"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/1.0/getNewsInfo?q=proident&publishDT=proident&interval=12&sortBy=proident",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"getNewsInfo"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "proident"
+								},
+								{
+									"key": "publishDT",
+									"value": "proident"
+								},
+								{
+									"key": "interval",
+									"value": "12"
+								},
+								{
+									"key": "sortBy",
+									"value": "proident"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Negative - Invalid Query Param - publishDT",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"description": "(Required) ",
+						"key": "X-Api-Key",
+						"value": "ccaf5d41cc5140c984818c344edcc14d"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/1.0/getNewsInfo?q=apple&publishDT_Inv=2023-01-13T10:32:40&interval=12&sortBy=popularity",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"1.0",
+						"getNewsInfo"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "apple",
+							"description": "(Required) "
+						},
+						{
+							"key": "publishDT_Inv",
+							"value": "2023-01-13T10:32:40"
+						},
+						{
+							"key": "interval",
+							"value": "12"
+						},
+						{
+							"key": "sortBy",
+							"value": "popularity"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Successful operation",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							},
+							{
+								"description": "(Required) ",
+								"key": "X-Api-Key",
+								"value": "proident"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/1.0/getNewsInfo?q=proident&publishDT=proident&interval=12&sortBy=proident",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"getNewsInfo"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "proident"
+								},
+								{
+									"key": "publishDT",
+									"value": "proident"
+								},
+								{
+									"key": "interval",
+									"value": "12"
+								},
+								{
+									"key": "sortBy",
+									"value": "proident"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": "[\n  {\n    \"status\": \"Excepteur dolor Duis laborum\",\n    \"totalResults\": -53405122,\n    \"articles\": [\n      {\n        \"source\": {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"author\": \"amet\",\n        \"title\": \"non labore\",\n        \"description\": \"aute\",\n        \"url\": \"qui ea quis tempor\",\n        \"urlToImage\": \"enim aliqua et\",\n        \"publishedAt\": \"1961-06-07T19:46:32.011Z\",\n        \"content\": \"sint d\"\n      },\n      {\n        \"source\": {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"author\": \"ad comm\",\n        \"title\": \"in eu\",\n        \"description\": \"id sed\",\n        \"url\": \"non voluptate ea elit\",\n        \"urlToImage\": \"Duis nisi dolor ut\",\n        \"publishedAt\": \"1989-07-01T21:24:27.175Z\",\n        \"content\": \"adipisicing culpa\"\n      }\n    ]\n  },\n  {\n    \"status\": \"Lorem\",\n    \"totalResults\": -49888492,\n    \"articles\": [\n      {\n        \"source\": {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"author\": \"aute eu\",\n        \"title\": \"Ut aute non Excepteur\",\n        \"description\": \"nulla ex Duis commodo amet\",\n        \"url\": \"consectetur dolore dolor sit minim\",\n        \"urlToImage\": \"ullamco Duis\",\n        \"publishedAt\": \"2000-03-02T14:24:57.199Z\",\n        \"content\": \"culpa anim\"\n      },\n      {\n        \"source\": {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"author\": \"aliquip cillum laboris\",\n        \"title\": \"anim qui\",\n        \"description\": \"exercitation\",\n        \"url\": \"irure officia\",\n        \"urlToImage\": \"do ex consectetur\",\n        \"publishedAt\": \"1975-12-10T16:13:19.119Z\",\n        \"content\": \"ut ullamco occ\"\n      }\n    ]\n  }\n]"
+				},
+				{
+					"name": "Invalid Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							},
+							{
+								"description": "(Required) ",
+								"key": "X-Api-Key",
+								"value": "proident"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/1.0/getNewsInfo?q=proident&publishDT=proident&interval=12&sortBy=proident",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"getNewsInfo"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "proident"
+								},
+								{
+									"key": "publishDT",
+									"value": "proident"
+								},
+								{
+									"key": "interval",
+									"value": "12"
+								},
+								{
+									"key": "sortBy",
+									"value": "proident"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "No data found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							},
+							{
+								"description": "(Required) ",
+								"key": "X-Api-Key",
+								"value": "proident"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/1.0/getNewsInfo?q=proident&publishDT=proident&interval=12&sortBy=proident",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"getNewsInfo"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "proident"
+								},
+								{
+									"key": "publishDT",
+									"value": "proident"
+								},
+								{
+									"key": "interval",
+									"value": "12"
+								},
+								{
+									"key": "sortBy",
+									"value": "proident"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Negative - Missing Mandatory Query Param - Search Keyword",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"description": "(Required) ",
+						"key": "X-Api-Key",
+						"value": "ccaf5d41cc5140c984818c344edcc14d"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/1.0/getNewsInfo?q=apple&publishDT_Inv=2023-01-13T10:32:40&interval=12&sortBy=popularity",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"1.0",
+						"getNewsInfo"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "apple",
+							"description": "(Required) "
+						},
+						{
+							"key": "publishDT_Inv",
+							"value": "2023-01-13T10:32:40"
+						},
+						{
+							"key": "interval",
+							"value": "12"
+						},
+						{
+							"key": "sortBy",
+							"value": "popularity"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Successful operation",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							},
+							{
+								"description": "(Required) ",
+								"key": "X-Api-Key",
+								"value": "proident"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/1.0/getNewsInfo?q=proident&publishDT=proident&interval=12&sortBy=proident",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"getNewsInfo"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "proident"
+								},
+								{
+									"key": "publishDT",
+									"value": "proident"
+								},
+								{
+									"key": "interval",
+									"value": "12"
+								},
+								{
+									"key": "sortBy",
+									"value": "proident"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": "[\n  {\n    \"status\": \"Excepteur dolor Duis laborum\",\n    \"totalResults\": -53405122,\n    \"articles\": [\n      {\n        \"source\": {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"author\": \"amet\",\n        \"title\": \"non labore\",\n        \"description\": \"aute\",\n        \"url\": \"qui ea quis tempor\",\n        \"urlToImage\": \"enim aliqua et\",\n        \"publishedAt\": \"1961-06-07T19:46:32.011Z\",\n        \"content\": \"sint d\"\n      },\n      {\n        \"source\": {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"author\": \"ad comm\",\n        \"title\": \"in eu\",\n        \"description\": \"id sed\",\n        \"url\": \"non voluptate ea elit\",\n        \"urlToImage\": \"Duis nisi dolor ut\",\n        \"publishedAt\": \"1989-07-01T21:24:27.175Z\",\n        \"content\": \"adipisicing culpa\"\n      }\n    ]\n  },\n  {\n    \"status\": \"Lorem\",\n    \"totalResults\": -49888492,\n    \"articles\": [\n      {\n        \"source\": {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"author\": \"aute eu\",\n        \"title\": \"Ut aute non Excepteur\",\n        \"description\": \"nulla ex Duis commodo amet\",\n        \"url\": \"consectetur dolore dolor sit minim\",\n        \"urlToImage\": \"ullamco Duis\",\n        \"publishedAt\": \"2000-03-02T14:24:57.199Z\",\n        \"content\": \"culpa anim\"\n      },\n      {\n        \"source\": {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"author\": \"aliquip cillum laboris\",\n        \"title\": \"anim qui\",\n        \"description\": \"exercitation\",\n        \"url\": \"irure officia\",\n        \"urlToImage\": \"do ex consectetur\",\n        \"publishedAt\": \"1975-12-10T16:13:19.119Z\",\n        \"content\": \"ut ullamco occ\"\n      }\n    ]\n  }\n]"
+				},
+				{
+					"name": "Invalid Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							},
+							{
+								"description": "(Required) ",
+								"key": "X-Api-Key",
+								"value": "proident"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/1.0/getNewsInfo?q=proident&publishDT=proident&interval=12&sortBy=proident",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"getNewsInfo"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "proident"
+								},
+								{
+									"key": "publishDT",
+									"value": "proident"
+								},
+								{
+									"key": "interval",
+									"value": "12"
+								},
+								{
+									"key": "sortBy",
+									"value": "proident"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "No data found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							},
+							{
+								"description": "(Required) ",
+								"key": "X-Api-Key",
+								"value": "proident"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/1.0/getNewsInfo?q=proident&publishDT=proident&interval=12&sortBy=proident",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"getNewsInfo"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "proident"
+								},
+								{
+									"key": "publishDT",
+									"value": "proident"
+								},
+								{
+									"key": "interval",
+									"value": "12"
+								},
+								{
+									"key": "sortBy",
+									"value": "proident"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "API to fetch News Info - Default Params",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"description": "(Required) ",
+						"key": "X-Api-Key",
+						"value": "proident"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/1.0/getNewsInfo?q=proident&publishDT=proident&interval=12&sortBy=proident",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"1.0",
+						"getNewsInfo"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "proident",
+							"description": "(Required) "
+						},
+						{
+							"key": "publishDT",
+							"value": "proident"
+						},
+						{
+							"key": "interval",
+							"value": "12"
+						},
+						{
+							"key": "sortBy",
+							"value": "proident"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Successful operation",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							},
+							{
+								"description": "(Required) ",
+								"key": "X-Api-Key",
+								"value": "proident"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/1.0/getNewsInfo?q=proident&publishDT=proident&interval=12&sortBy=proident",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"getNewsInfo"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "proident"
+								},
+								{
+									"key": "publishDT",
+									"value": "proident"
+								},
+								{
+									"key": "interval",
+									"value": "12"
+								},
+								{
+									"key": "sortBy",
+									"value": "proident"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": "[\n  {\n    \"status\": \"Excepteur dolor Duis laborum\",\n    \"totalResults\": -53405122,\n    \"articles\": [\n      {\n        \"source\": {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"author\": \"amet\",\n        \"title\": \"non labore\",\n        \"description\": \"aute\",\n        \"url\": \"qui ea quis tempor\",\n        \"urlToImage\": \"enim aliqua et\",\n        \"publishedAt\": \"1961-06-07T19:46:32.011Z\",\n        \"content\": \"sint d\"\n      },\n      {\n        \"source\": {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"author\": \"ad comm\",\n        \"title\": \"in eu\",\n        \"description\": \"id sed\",\n        \"url\": \"non voluptate ea elit\",\n        \"urlToImage\": \"Duis nisi dolor ut\",\n        \"publishedAt\": \"1989-07-01T21:24:27.175Z\",\n        \"content\": \"adipisicing culpa\"\n      }\n    ]\n  },\n  {\n    \"status\": \"Lorem\",\n    \"totalResults\": -49888492,\n    \"articles\": [\n      {\n        \"source\": {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"author\": \"aute eu\",\n        \"title\": \"Ut aute non Excepteur\",\n        \"description\": \"nulla ex Duis commodo amet\",\n        \"url\": \"consectetur dolore dolor sit minim\",\n        \"urlToImage\": \"ullamco Duis\",\n        \"publishedAt\": \"2000-03-02T14:24:57.199Z\",\n        \"content\": \"culpa anim\"\n      },\n      {\n        \"source\": {\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"author\": \"aliquip cillum laboris\",\n        \"title\": \"anim qui\",\n        \"description\": \"exercitation\",\n        \"url\": \"irure officia\",\n        \"urlToImage\": \"do ex consectetur\",\n        \"publishedAt\": \"1975-12-10T16:13:19.119Z\",\n        \"content\": \"ut ullamco occ\"\n      }\n    ]\n  }\n]"
+				},
+				{
+					"name": "Invalid Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							},
+							{
+								"description": "(Required) ",
+								"key": "X-Api-Key",
+								"value": "proident"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/1.0/getNewsInfo?q=proident&publishDT=proident&interval=12&sortBy=proident",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"getNewsInfo"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "proident"
+								},
+								{
+									"key": "publishDT",
+									"value": "proident"
+								},
+								{
+									"key": "interval",
+									"value": "12"
+								},
+								{
+									"key": "sortBy",
+									"value": "proident"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "No data found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							},
+							{
+								"description": "(Required) ",
+								"key": "X-Api-Key",
+								"value": "proident"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/1.0/getNewsInfo?q=proident&publishDT=proident&interval=12&sortBy=proident",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"1.0",
+								"getNewsInfo"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "proident"
+								},
+								{
+									"key": "publishDT",
+									"value": "proident"
+								},
+								{
+									"key": "interval",
+									"value": "12"
+								},
+								{
+									"key": "sortBy",
+									"value": "proident"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{bearerToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}

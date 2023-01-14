@@ -3,74 +3,25 @@
  */
 package com.sapient.newssearch.exceptions;
 
-import java.util.Date;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  * Rajesh Engimoori
  * Created on Jan 11, 2023
  * Email: rajesh.em@gmail.com
  **/
-
+@Getter
+@Setter
+@NoArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ErrorMessage {
 
-	private int statusCode;
-	private Date timestamp;
 	private String message;
-	private String description;
 
-	/**
-	 * @return the statusCode
-	 */
-	public int getStatusCode() {
-		return statusCode;
-	}
-
-	/**
-	 * @param statusCode the statusCode to set
-	 */
-	public void setStatusCode(int statusCode) {
-		this.statusCode = statusCode;
-	}
-
-	/**
-	 * @return the timestamp
-	 */
-	public Date getTimestamp() {
-		return timestamp;
-	}
-
-	/**
-	 * @param timestamp the timestamp to set
-	 */
-	public void setTimestamp(Date timestamp) {
-		this.timestamp = timestamp;
-	}
-
-	/**
-	 * @return the message
-	 */
-	public String getMessage() {
-		return message;
-	}
-
-	/**
-	 * @param message the message to set
-	 */
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	/**
-	 * @return the description
-	 */
-	public String getDescription() {
-		return description;
-	}
-
-	/**
-	 * @param description the description to set
-	 */
-	public void setDescription(String description) {
-		this.description = description;
-	}
 }

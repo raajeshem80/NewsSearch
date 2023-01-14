@@ -23,6 +23,8 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.NoHandlerFoundException;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import com.sapient.newssearch.dto.Response;
+
 /**
  * Rajesh Engimoori
  * Created on Jan 12, 2023
@@ -34,52 +36,51 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 public class NewsApiExceptionHandler extends ResponseEntityExceptionHandler {
     
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<ErrorMessage> exceptionHandler(Exception ex) {
-        //ErrorMessage response = ErrorMessage.unProcessableEntity();
-    	ErrorMessage response = new ErrorMessage();
+    public ResponseEntity<Response> exceptionHandler(Exception ex) {
+        Response response = Response.unProcessableEntity();
         HttpStatus httpStatus = HttpStatus.UNPROCESSABLE_ENTITY;
 
-//        if (ex instanceof NewsApiException) {
-//            response = ErrorMessage.unProcessableEntity();
-//            response.addErrorMsgToResponse(ex.getMessage(), ex);
-//        } else if (ex instanceof HttpMessageNotReadableException) {
-//            String error = "Malformed JSON request";
-//            response = ErrorMessage.badRequest();
-//            response.addErrorMsgToResponse(error, ex);
-//            httpStatus = HttpStatus.BAD_REQUEST;
-//        } else {
-//        	response = ErrorMessage.exception();
-//            response.addErrorMsgToResponse(ex.getLocalizedMessage(), ex);
-//            httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
-//        }
+        if (ex instanceof NewsApiException) {
+            response = Response.unProcessableEntity();
+            response.addErrorMsgToResponse(ex.getMessage(), ex);
+        } else if (ex instanceof HttpMessageNotReadableException) {
+            String error = "Malformed JSON request";
+            response = Response.badRequest();
+            response.addErrorMsgToResponse(error, ex);
+            httpStatus = HttpStatus.BAD_REQUEST;
+        } else {
+        	response = Response.exception();
+            response.addErrorMsgToResponse(ex.getLocalizedMessage(), ex);
+            httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
+        }
         return this.handleResponse(response, httpStatus);
     }
     
-//    @Override
-//    protected ResponseEntity<Object> handleHttpMessageNotReadable(HttpMessageNotReadableException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
-//        String error = "Malformed JSON request";
-//        ErrorMessage response = ErrorMessage.badRequest();
-//        response.addErrorMsgToResponse(error, ex);
-//        return new ResponseEntity(response, HttpStatus.BAD_REQUEST);
-//    }
-//    
-//    @Override
-//    public ResponseEntity handleNoHandlerFoundException(NoHandlerFoundException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
-//        String error = "Specified path not found on this server";
-//        ErrorMessage response = ErrorMessage.badRequest();
-//        response.addErrorMsgToResponse(error, ex);
-//        return new ResponseEntity(response, HttpStatus.NOT_FOUND);
-//    }
-//    
-//    
-//    @Override
-//	protected ResponseEntity<Object> handleMissingServletRequestParameter(MissingServletRequestParameterException ex,
-//			HttpHeaders headers, HttpStatus status, WebRequest request) {
-//		ErrorMessage response = ErrorMessage.badRequest();
-//        response.addErrorMsgToResponse(ex.getMessage(), ex);
-//        
-//		return handleExceptionInternal(ex, response, headers, HttpStatus.BAD_REQUEST, request);
-//	}
+    @Override
+    protected ResponseEntity<Object> handleHttpMessageNotReadable(HttpMessageNotReadableException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
+        String error = "Malformed JSON request";
+        Response response = Response.badRequest();
+        response.addErrorMsgToResponse(error, ex);
+        return new ResponseEntity(response, HttpStatus.BAD_REQUEST);
+    }
+    
+    @Override
+    public ResponseEntity handleNoHandlerFoundException(NoHandlerFoundException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
+        String error = "Specified path not found on this server";
+        Response response = Response.badRequest();
+        response.addErrorMsgToResponse(error, ex);
+        return new ResponseEntity(response, HttpStatus.NOT_FOUND);
+    }
+    
+    
+    @Override
+	protected ResponseEntity<Object> handleMissingServletRequestParameter(MissingServletRequestParameterException ex,
+			HttpHeaders headers, HttpStatus status, WebRequest request) {
+    	Response response = Response.badRequest();
+        response.addErrorMsgToResponse(ex.getMessage(), ex);
+        
+		return handleExceptionInternal(ex, response, headers, HttpStatus.BAD_REQUEST, request);
+	}
     
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(
@@ -100,10 +101,10 @@ public class NewsApiExceptionHandler extends ResponseEntityExceptionHandler {
         return new ResponseEntity<>(body, HttpStatus.BAD_REQUEST);
     }
     
-	protected ResponseEntity<ErrorMessage> handleResponse(ErrorMessage response, HttpStatus status) {
+	protected ResponseEntity<Response> handleResponse(Response response, HttpStatus status) {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);    
-		return new ResponseEntity<ErrorMessage>(response, headers, status);
+		return new ResponseEntity<Response>(response, headers, status);
 	}
-
+	
 }

@@ -2,6 +2,7 @@ package com.sapient.newssearch.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.sapient.newssearch.exceptions.ErrorMessage;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -69,11 +70,11 @@ public class Response {
         return response;
     }
     
-//    public void addErrorMsgToResponse(String errorMsg, Exception ex) {
-//        ResponseError error = new ResponseError()
-//                .setMessage(errorMsg);
-//        setErrors(error);
-//    }
+    public void addErrorMsgToResponse(String errorMsg, Exception ex) {
+    	ErrorMessage error = new ErrorMessage();
+    	error.setMessage(errorMsg);
+        setErrors(error);
+    }
 
     public enum Status {
         OK, BAD_REQUEST, UNAUTHORIZED, VALIDATION_EXCEPTION, EXCEPTION, WRONG_CREDENTIALS, ACCESS_DENIED, NOT_FOUND, DUPLICATE_ENTITY, UNPROCESSABLE_ENTITY

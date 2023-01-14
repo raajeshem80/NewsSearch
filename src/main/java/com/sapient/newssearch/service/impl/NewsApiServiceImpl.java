@@ -47,7 +47,6 @@ public class NewsApiServiceImpl implements NewsApiService {
 		sb.append(newsapiEndpoint);
 		sb.append("?q="+q);
 		if(publishedFrom != null && !publishedFrom.equals("")) {
-			log.info(">>>>>>>>>>>>>>>> "+publishedFrom);
 			String publishedTo = NewsApiUtility.FormatDateTime(publishedFrom, interval);
 			sb.append("&from=" + publishedFrom);
 			sb.append("&to=" + publishedTo);
