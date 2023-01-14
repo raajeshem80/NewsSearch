@@ -55,3 +55,18 @@ Run the included docker-compose file with:
 ```bash
 docker-compose down
 ```
+## 12-factor principles
+
+Below are the 12-factor principles
+
+```bash
+* Codebase - GitHub
+* Dependencies - Maven
+* Logging - ELK
+* Build and Run
+
+```
+
+## Code Coverage
+
+Sonar yet implement
