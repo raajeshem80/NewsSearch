@@ -8,6 +8,8 @@
 * Spring Boot;
 * JUnit;
 * Lombock;
+* Swagger OpenApi 3
+
 ## Build
 
 Build the application:
