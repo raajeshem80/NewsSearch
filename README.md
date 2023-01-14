@@ -76,4 +76,4 @@ Below are the 12-factor principles
 
 ## Code Coverage
 
-Sonar yet implement
+Sonar yet to implement
