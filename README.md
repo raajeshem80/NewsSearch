@@ -55,6 +55,13 @@ Run the included docker-compose file with:
 ```bash
 docker-compose down
 ```
+
+## Postman
+
+Execute the postman collection json from this repo
+
+![image](https://user-images.githubusercontent.com/4980747/212453636-aa02a8e9-4236-439c-99bb-5164176c89f9.png)
+
 ## 12-factor principles
 
 Below are the 12-factor principles
