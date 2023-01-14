@@ -16,7 +16,21 @@ Build the application:
 mvn clean package
 ```
 
+Build the docker image :
+
+```bash
+docker build -t news-search .
+```
+
 ## Run
+
+Run the news-search service with below command:
+
+```bash
+docker run -p 8080:8080 news-search
+```
+
+Or
 
 Run the included docker-compose file with:
 
@@ -30,6 +44,7 @@ docker-compose up
 
 http://localhost:8080/swagger-ui.html
 
+![image](https://user-images.githubusercontent.com/4980747/212449815-c8db8547-7527-4e26-bd12-e9de3f286909.png)
 
 ## To Stop
 
