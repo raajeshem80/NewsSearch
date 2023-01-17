@@ -27,6 +27,20 @@ pipeline {
 		}
 	}
 	
+
+	stage ( 'API Automation') {
+		steps() {
+			bat 'newman run News_Group_API_postman_collection.json -r htmlextra --reporter-htmlextra-export ./newman/report.html'
+		publishHTML target: [
+				allowMissing: false,
+				alwaysLinkToLastBuild: false,
+				keepAll: true,
+				reportDir: '.\newman',
+				reportFiles: 'report.html',
+				reportName: 'Newman HTML Reporter'
+		]
+	}
+
     stage('Docker Build') {
       steps {
 		echo "..... Docker Build"
@@ -39,7 +53,7 @@ pipeline {
 		echo "..... Docker Build"
 			bat 'docker push rajeshazure1980/news-search:latest'
 		}
-    }
+    }	
   }
   
   post {

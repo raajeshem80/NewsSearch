@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "dfb0929c-a477-4576-8b1b-d839dc159fd8",
-		"name": "News Group API",
+		"name": "News_Group_API",
 		"description": "Search through millions of articles from over 80,000 large and small news sources and blogs. This project includes : Spring Boot(2.7.4), Spring Data JPA, Spring Validation, Spring Security + JWT Token, PostgreSQL, Mapstruct, Lombok, Swagger\n\nContact Support:\n Name: Rajesh Engimoori\n Email: rajesh.em@gmail.com",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "1713087"
