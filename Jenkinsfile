@@ -39,6 +39,7 @@ pipeline {
 				reportFiles: 'report.html',
 				reportName: 'Newman HTML Reporter'
 		]
+		}
 	}
 
     stage('Docker Build') {
