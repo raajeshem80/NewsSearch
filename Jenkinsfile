@@ -32,12 +32,13 @@ pipeline {
 				  -D sonar.projectName=News-Group-API \
 				  -D sonar.projectVersion=1.0 \
 				  -D sonar.sources=src \
+				  -D sonar.coverage.jacoco.xmlReportPaths=target/jacoco/jacoco.xml \
 				  -D sonar.host.url=http://localhost:9000/ \
 				  -D sonar.java.binaries=target/classes \
 				  -D sonar.language=java"
 				publishHTML target: [
-					allowMissing: false,
-					alwaysLinkToLastBuild: false,
+					allowMissing: true,
+					alwaysLinkToLastBuild: true,
 					keepAll: true,
 					reportDir: '\\target\\jacoco',
 					reportFiles: 'index.html',
@@ -67,14 +68,14 @@ pipeline {
     stage('Docker Build') {
       steps {
 		echo "..... Docker Build"
-			bat 'docker build Dockerfile -t rajeshazure1980/public:news-group-api .'
+			bat 'docker build -t rajeshazure1980/public:news-group-api .'
 		}
     }
 	
 	stage('Docker Publish') {
       steps {
 		echo "..... Docker Build"
-			bat 'docker push rajeshazure1980/news-group-api:latest'
+			bat 'docker push rajeshazure1980/public:news-group-api:latest'
 		}
     }	
   }
