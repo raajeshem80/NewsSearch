@@ -35,7 +35,7 @@ pipeline {
 					allowMissing: false,
 					alwaysLinkToLastBuild: false,
 					keepAll: true,
-					reportDir: '\target\jacoco',
+					reportDir: '\\target\\jacoco',
 					reportFiles: 'index.html',
 					reportName: 'Coverage Report'
 				]				  
