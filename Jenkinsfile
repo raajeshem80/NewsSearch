@@ -89,8 +89,8 @@ pipeline {
           body: "Something is wrong with ${env.BUILD_URL}"
     }
 	
-	always {
-		//bat 'docker logout'
-	}
+/*	always {
+		bat 'docker logout'
+	}*/
   }
 }
