@@ -75,7 +75,7 @@ pipeline {
 	stage('Docker Publish') {
       steps {
 		echo "..... Docker Build"
-			bat 'docker push rajeshazure1980/public:news-group-api:latest'
+			bat 'docker push rajeshazure1980/news-group-api:latest'
 		}
     }	
   }
@@ -90,7 +90,7 @@ pipeline {
     }
 	
 	always {
-		bat 'docker logout'
+		//bat 'docker logout'
 	}
   }
 }
