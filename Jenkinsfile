@@ -68,13 +68,15 @@ pipeline {
     stage('Docker Build') {
       steps {
 		echo "..... Docker Build"
-			bat 'docker build -t rajeshazure1980/public:news-group-api .'
+			bat 'docker build -t rajeshazure1980/news-group-api .'
 		}
     }
 	
 	stage('Docker Publish') {
       steps {
 		echo "..... Docker Build"
+			bat 'docker push rajeshazure1980/news-group-api:latest'
+			bat 'docker login -u rajeshazure1980 -p Gowshik@12 docker.io'
 			bat 'docker push rajeshazure1980/news-group-api:latest'
 		}
     }	
@@ -89,8 +91,8 @@ pipeline {
           body: "Something is wrong with ${env.BUILD_URL}"
     }
 	
-/*	always {
+	always {
 		bat 'docker logout'
-	}*/
+	}
   }
 }
