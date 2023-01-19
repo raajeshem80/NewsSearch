@@ -75,7 +75,6 @@ pipeline {
 	stage('Docker Publish') {
       steps {
 		echo "..... Docker Build"
-			bat 'docker push rajeshazure1980/news-group-api:latest'
 			bat 'docker login -u rajeshazure1980 -p Gowshik@12 docker.io'
 			bat 'docker push rajeshazure1980/news-group-api:latest'
 		}
