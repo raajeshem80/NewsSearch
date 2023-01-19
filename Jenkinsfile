@@ -28,9 +28,13 @@ pipeline {
 				bat "${scannerhome}\\sonar-scanner \
 				  -D sonar.login=admin \
 				  -D sonar.password=admin123 \
-				  -D sonar.projectKey=Rajesh \
+				  -D sonar.projectKey=News-Group \
+				  -D sonar.projectName=News-Group-API \
+				  -D sonar.projectVersion=1.0 \
 				  -D sonar.sources=src \
-				  -D sonar.host.url=http://localhost:9000/"
+				  -D sonar.host.url=http://localhost:9000/ \
+				  -D sonar.java.binaries=target/classes \
+				  -D sonar.language=java"
 				publishHTML target: [
 					allowMissing: false,
 					alwaysLinkToLastBuild: false,
