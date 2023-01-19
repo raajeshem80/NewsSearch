@@ -22,37 +22,55 @@ pipeline {
 
 		}
 
-	   steps {
-		echo "..... Sonar"
+		steps {
+			echo "..... Sonar"
+			withSonarQubeEnv('sonarqube') {
+				bat "${scannerhome}\\sonar-scanner \
+				  -D sonar.login=admin \
+				  -D sonar.password=admin123 \
+				  -D sonar.projectKey=Rajesh \
+				  -D sonar.sources=src \
+				  -D sonar.host.url=http://localhost:9000/"
+				publishHTML target: [
+					allowMissing: false,
+					alwaysLinkToLastBuild: false,
+					keepAll: true,
+					reportDir: 'target\jacoco',
+					reportFiles: 'index.html',
+					reportName: 'Coverage Report'
+				]				  
+			}
 		}
 	}
 	
 
 	stage ( 'API Automation') {
 		steps() {
+			echo "..... API Automation Start"
 			bat 'newman run News_Group_API_postman_collection.json -r htmlextra --reporter-htmlextra-export ./newman/report.html'
-		publishHTML target: [
-				allowMissing: false,
-				alwaysLinkToLastBuild: false,
-				keepAll: true,
-				reportDir: 'newman',
-				reportFiles: 'report.html',
-				reportName: 'Newman HTML Reporter'
-		]
+			publishHTML target: [
+					allowMissing: false,
+					alwaysLinkToLastBuild: false,
+					keepAll: true,
+					reportDir: 'newman',
+					reportFiles: 'report.html',
+					reportName: 'Newman HTML Reporter'
+			]
+			echo "..... API Automation End"
 		}
 	}
 
     stage('Docker Build') {
       steps {
 		echo "..... Docker Build"
-			bat 'docker build Dockerfile -t rajeshazure1980/public:news-search .'
+			bat 'docker build Dockerfile -t rajeshazure1980/public:news-group-api .'
 		}
     }
 	
 	stage('Docker Publish') {
       steps {
 		echo "..... Docker Build"
-			bat 'docker push rajeshazure1980/news-search:latest'
+			bat 'docker push rajeshazure1980/news-group-api:latest'
 		}
     }	
   }

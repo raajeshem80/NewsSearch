@@ -30,9 +30,10 @@
         <system-rules.version>1.19.0</system-rules.version>
         <system-lambda.version>1.0.0</system-lambda.version>
         <system-stubs.version>1.1.0</system-stubs.version>
+		<project.test.result.directory>${project.build.directory}</project.test.result.directory>
 		<sonar.java.codeCoveragePlugin>jacoco</sonar.java.codeCoveragePlugin>
 		<sonar.coverage.jacoco.xmlReportPaths>${project.test.result.directory}/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
-		<sonar.junit.reportPaths>${project.test.result.directory}/surefire-reports/junitreports</sonar.junit.reportPaths>
+		<sonar.junit.reportPaths>${project.test.result.directory}/surefire-reports</sonar.junit.reportPaths>
 		<sonar.surefire.reportPaths>${project.test.result.directory}/surefire-reports</sonar.surefire.reportPaths>
 		<sonar.java.source>${java.version}</sonar.java.source>
 		<sonar.exclusions>
@@ -145,7 +146,7 @@
 					</execution>
 					<execution>
 						<id>post-test</id>
-						<phase>test</phase>
+						<phase>package</phase>
 						<goals>
 							<goal>report</goal>
 						</goals>
